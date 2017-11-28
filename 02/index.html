@@ -8,17 +8,213 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title></title>
     <link href="css/main.css" rel="stylesheet">>
+    <style>
+
+    .square {
+    	width: 100px;
+    	height: 130px;
+        border: solid black 1px;
+        border-radius: 10px;
+        margin: 15px;
+
+    }
+    .square .text{
+        text-align: center;
+        font-size: 16px;
+        color: white;
+        padding-top: 20px;
+    }
+
+    button {
+        width: 100px;
+        height: 100px;
+        background-color: #5e9c40;
+        border-radius: 10px;
+    }
+
+    .css-block, .buttons-block, .js-block {
+        position: absolute;
+        width: 300px;
+
+    }
+
+    .css-block .square, .buttons-block .square , .js-block .square{
+        position: absolute;
+
+    }
+
+    .buttons-block
+    {
+        margin-left: 350px;
+        margin-top: 20px;
+    }
+
+    .js-block{
+        margin-left: 600px;
+    }
+
+    .css-block {
+        width: 300px;
+    }
+
+    .rotate, .move {
+        margin-left: 160px;
+    }
+    .size, .move {
+        margin-top: 160px;
+    }
+
+    .css-block .size {
+        background-color: aquamarine;
+    }
+
+    .css-block .move {
+        background-color: antiquewhite;
+    }
+
+    .css-block .opacity {
+        background-color: cadetblue;
+    }
+
+    .css-block .rotate {
+        background-color: coral;
+    }
+
+    .js-block .size {
+        background-color: darksalmon;
+    }
+
+    .js-block .move {
+        background-color: darkturquoise;
+    }
+
+    .js-block .opacity {
+        background-color: darkmagenta;
+    }
+
+    .js-block .rotate {
+        background-color: darkslateblue;
+    }
+
+    .css-block .opacity.animation {
+        opacity: 0;
+        transition: opacity 2s;
+    }
+
+    .css-block .rotate.animation {
+        transform: rotate(-45deg);
+        transition: transform 2s;
+    }
+
+    .css-block .size.animation {
+        width: 115px;
+        height: 115px;
+        transition: width 2s, height 2s;
+    }
+
+    .css-block .move.animation {
+        transform: translate(240px, 200px);
+        transition: transform 2s;
+    }
+
+    .css-block .opacity.none-animation {
+        opacity: 1;
+        transition: opacity 2s;
+    }
+
+    .css-block .rotate.none-animation {
+        transform: rotate(0deg);
+        transition: transform 2s;
+    }
+
+    .css-block .size.none-animation {
+        width: 100px;
+        height: 130px;
+        transition: width 2s, height 2s;
+    }
+
+    .css-block .move.none-animation {
+        transform: translate(0px, 0px);
+        transition: transform 2s;
+    }
+
+    </style>
 </head>
 <body>
     <div id="background">
 
+        <div class="css-block">
+            <div class="square opacity">
+                <div class="text">CSS3 FadeIn FadeOut</div>
+            </div>
+            <div class="square rotate">
+                <div class="text">CSS3 Transform Rotate</div>
+            </div>
+            <div class="square size">
+                <div class="text">CSS3 Transform Scale</div>
+            </div>
+            <div class="square move">
+                <div class="text">CSS3 FadeIn Move</div>
+            </div>
+        </div>
+
+        <div class="buttons-block">
+            <button id = "css-start"> Css start</button>
+            <button id = "jq-start"> Jquery start</button>
+            <button id = "css-reset"> Css reset</button>
+            <button id = "jq-reset"> Jquery reset</button>
+
+        </div>
+
+        <div class="js-block">
+            <div class="square opacity">
+                <div class="text">Jquery FadeOut</div>
+            </div>
+            <div class="square rotate">
+                <div class="text">Jquery Transform Rotate</div>
+            </div>
+            <div class="square size">
+                <div class="text">Jquery Zoom</div>
+            </div>
+            <div class="square move">
+                <div class="text">Jquery Animate</div>
+            </div>
+        </div>
+
     </div>
+
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/jquery-ui-1.10.4.min.js"></script>
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script>
         $(function () {
-           
+
+            var $cssElements = $(".css-block .square");
+
+            $("#css-start").click(function(){
+                $cssElements.removeClass("none-animation");
+                $cssElements.addClass("animation");
+            });
+
+            $("#css-reset").click(function(){
+                $cssElements.removeClass("animation");
+                $cssElements.addClass("none-animation");
+            });
+
+            $("#jq-start").click(function(){
+                $(".js-block .size").animate({width:"115px", height: "115px"},2000);
+                $(".js-block .opacity").fadeOut(2000,0);
+                $(".js-block .rotate").css({ transform: "rotate(-45deg)", transition: "transform 2s"});
+                $(".js-block .move").css({ transform: "translate(100px, 100px)", transition: "transform 2s"});
+            });
+
+            $("#jq-reset").click(function(){
+                $(".js-block .size").animate({width:"100px", height: "130px"},2000);
+                $(".js-block .opacity").fadeTo(2000,1);
+                $(".js-block .rotate").css({ transform: "rotate(0deg)", transition: "transform 2s"});
+                $(".js-block .move").css({transform: "translate(0px, 0px)", transition: "transform 2s"});
+            });
+
         });
     </script>
 </body>
