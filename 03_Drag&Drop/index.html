@@ -25,7 +25,26 @@
     <script>
         $(function () {
 
+            var boxCount = 0;
+
+            $(".gift").draggable({
+                revert: "invalid"
+            });
+
+            $('.img6').droppable({
+                drop: function (event, ui) {
+                    ui.draggable.css({ transform: "translate(0px, 200px)", transition: "transform 1s"});
+                    boxCount++;
+                    if (boxCount == 4) {
+                        $(".bg").css({ background: "none"});
+                        $('.img7').css({ left: "0px", transition: "left 2s"});
+                        $('.img8').css({display: "block", position: "absolute", opacity: "0"}).fadeTo(2000, 1);
+                    }
+                }
+            });
+
         });
+
     </script>
 </body>
 </html>
