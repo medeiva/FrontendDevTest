@@ -1,0 +1,135 @@
+body{
+    background-image: url(../images/back.png);
+    background-repeat: no-repeat;
+}
+
+header {
+    height: 160px;
+    background-image: url(../images/firm_element2.png);
+    background-repeat: no-repeat;
+}
+
+.title {
+    padding-left: 70px;
+    padding-top: 40px;
+}
+
+.diagram {
+    margin-left: 190px;
+}
+
+.kras-ellipse {
+    margin-top: -280px;
+}
+
+.nras-ellipse {
+    margin-top: -180px;
+    margin-left: 150px;
+}
+
+.count {
+    position: absolute;
+}
+
+.total-ellipse .count {
+    margin-top: 230px;
+    margin-left: -140px;
+}
+
+.kras-ellipse .count {
+    margin-left: -115px;
+    margin-top: 80px;
+}
+
+.nras-ellipse .count {
+    margin-top: 60px;
+    margin-left: -75px;
+}
+
+#header-text {
+    height: 160px;
+    background-image: url(../images/skolkim_svoim_pacientam_v.png);
+    background-repeat: no-repeat;
+}
+
+.sliders {
+    margin-top: 40px;
+    margin-left: 35px;
+}
+
+span img {
+    position: absolute;
+}
+
+.total-slider img{
+    margin-top: 86px;
+    margin-left: 30px;
+}
+
+.kras-slider img{
+    margin-top: 57px;
+    margin-left: 65px;
+}
+
+.nras-slider img{
+    margin-top: 57px;
+    margin-left: 64px;
+}
+
+.nras-slider .marker_shadow{
+    margin-left: 150px;
+}
+
+.nras-slider .marker_shadow_nras{
+    margin-left: 144px;
+}
+
+.nras-slider .marker_nras {
+    margin-left: 144px;
+    margin-top: 52px;
+}
+
+.slider-title {
+    padding-top: 55px;
+}
+
+.kras-slider .marker_shadow{
+    margin-left: 207px;
+}
+
+.kras-slider .marker_shadow_kras{
+    margin-left: 200px;
+}
+
+.kras-slider .marker_kras {
+    margin-left: 200px;
+    margin-top: 52px;
+}
+
+.total-slider .marker_shadow{
+    margin-left: 336px;
+}
+
+.total-slider .marker_shadow_total{
+    margin-left: 330px;
+}
+
+.total-slider .marker_total {
+    margin-left: 330px;
+    margin-top: 81px;
+}
+
+.total-slider .slider-value {
+    margin-left: 338px;
+    margin-top: 58px;
+}
+
+.nras-slider .slider-value {
+    margin-left: 164px;
+    margin-top: 30px;
+}
+
+.kras-slider .slider-value {
+    margin-left: 221px;
+    margin-top: 29px;
+}
