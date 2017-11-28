@@ -14,6 +14,32 @@
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script>
         $(function () {
+
+            var $drag = $(".drag_red"),
+                $dragHeight = $drag.height();
+
+            $drag.draggable({
+                axis: "y",
+                drag: function (event, ui) {
+
+                    var dragTop = ui.offset.top,
+                        dragBottom = dragTop + $dragHeight,
+                        $men = $(".map li");
+
+                    $men.each(function () {
+                        var $man = $(this),
+                            top = $man.offset().top,
+                            bottom = top + $man.height();
+                        if (top >= dragTop && bottom <= dragBottom ) {
+                            $man.addClass("red");
+                        } else {
+                            $man.removeClass("red");
+                        }
+                    });
+
+                }
+            });
+
         });
     </script>
 </head>
@@ -24,13 +50,13 @@
             <div class="map_area">
                 <ul class="map">
                     <li></li>
-                    <li class="yellow"></li>
-                    <li class="yellow"></li>
-                    <li class="yellow"></li>
-                    <li class="yellow"></li>
-                    <li class="yellow"></li>
+                    <li class="yellow 1"></li>
+                    <li class="yellow 2"></li>
+                    <li class="yellow 3"></li>
+                    <li class="yellow 4"></li>
+                    <li class="yellow 5"></li>
                     <li></li>
-                    <li class="yellow"></li>
+                    <li class="yellow 6"></li>
                     <li></li>
                 </ul>
                 <div class="drag_red_wrapper">
