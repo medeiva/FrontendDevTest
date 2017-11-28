@@ -20,7 +20,13 @@
 		 width:1024px;
 		 height:768px;
 	}
+    .land:hover {
+        fill: #1a4791;
+    }
 
+    .land.active {
+        fill: red;
+    }
     </style>
 </head>
 <body>
@@ -140,6 +146,11 @@
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script>
         $(function () {
+
+            $(".land").click(function(){
+                this.classList.toggle("active");
+            });
+
         });
     </script>
 </body>
