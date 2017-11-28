@@ -32,7 +32,22 @@
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script>
         $(function () {
-           
+
+            var canvas=document.getElementById("screen"),
+                context=canvas.getContext("2d"),
+                x = 200,
+                y = 200;
+
+            context.strokeRect(x, y, 200, 200);
+            context.font="30px Arial";
+            context.fillText("Hello World", x+25, y+100);
+
+            context.beginPath()
+            context.moveTo(x-20, x-20);
+            context.lineWidth = 1;
+            context.lineTo(x+400, x+216);
+            context.stroke();
+
         });
     </script>
 </body>
