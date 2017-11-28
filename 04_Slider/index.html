@@ -175,6 +175,10 @@
         .Peshki > div.after {
             display: block;
         }
+
+        .display-none {
+            display: block !important;
+        }
     </style>
 </head>
 
@@ -202,7 +206,26 @@
     <script src="js/hammer.js"></script>
     <script>
         $(function () {
-           
+        var maxValue = 100;
+            $images = $(".Peshki").children();
+            imglength = $images.length;
+            step = ($(".parentSlider").width() - $(".Layer4").width())/maxValue;
+
+            $(".Layer4").draggable({
+               axis: "x",
+               containment: ".parentSlider",
+               drag: function (event, ui) {
+                   var val = ui.position.left/step;
+                       maxlength = Math.floor(val/imglength);
+
+                   $images.hide();
+                   for(var i = 0; i <= maxlength; i++) {
+                       $($images[10-i]).show()
+                   }
+                   $(".textFooter").text(Math.round(val));
+
+               }
+           });
         });
     </script>
 </body>
