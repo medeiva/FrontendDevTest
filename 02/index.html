@@ -202,21 +202,22 @@
             });
 
             $("#jq-start").click(function(){
-                $(".js-block .size").animate({width:"115px", height: "115px"},2000);
-                $(".js-block .opacity").fadeOut(2000,0);
-                $(".js-block .rotate").css({ transform: "rotate(-45deg)", transition: "transform 2s"});
-                $(".js-block .move").css({ transform: "translate(100px, 100px)", transition: "transform 2s"});
+                $(".js-block .size").animate({width:"115px", height: "115px"}, 1000);
+                $(".js-block .opacity").fadeOut(2000, 0);
+                $(".js-block .rotate").css({transform: "rotate(-45deg)", transition: "transform 2s"});
+                $(".js-block .move").css({transform: "translate(100px, 100px)", transition: "transform 2s"});
             });
 
             $("#jq-reset").click(function(){
-                $(".js-block .size").animate({width:"100px", height: "130px"},2000);
-                $(".js-block .opacity").fadeTo(2000,1);
-                $(".js-block .rotate").css({ transform: "rotate(0deg)", transition: "transform 2s"});
+                $(".js-block .size").animate({width:"100px", height: "130px"}, 1000);
+                $(".js-block .opacity").fadeTo(2000, 1);
+                $(".js-block .rotate").css({transform: "rotate(0deg)", transition: "transform 2s"});
                 $(".js-block .move").css({transform: "translate(0px, 0px)", transition: "transform 2s"});
             });
 
         });
     </script>
+
 </body>
 
 </html>

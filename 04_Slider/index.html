@@ -16,7 +16,7 @@
             background-color:#4a8e21;
         
         }
-        
+
         .Layer3 {
             background-size: 100% 100%;
             position: absolute;
@@ -206,6 +206,7 @@
     <script src="js/hammer.js"></script>
     <script>
         $(function () {
+
         var maxValue = 100;
             $images = $(".Peshki").children();
             imglength = $images.length;
@@ -215,17 +216,18 @@
                axis: "x",
                containment: ".parentSlider",
                drag: function (event, ui) {
-                   var val = ui.position.left/step;
-                       maxlength = Math.floor(val/imglength);
+                   var val = ui.position.left / step;
+                       maxlength = Math.floor(val / imglength);
 
                    $images.hide();
                    for(var i = 0; i <= maxlength; i++) {
-                       $($images[10-i]).show()
+                       $($images[10 - i]).show()
                    }
                    $(".textFooter").text(Math.round(val));
 
                }
            });
+
         });
     </script>
 </body>

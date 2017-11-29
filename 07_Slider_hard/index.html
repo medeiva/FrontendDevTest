@@ -30,6 +30,7 @@
                         var $man = $(this),
                             top = $man.offset().top,
                             bottom = top + $man.height();
+
                         if (top >= dragTop && bottom <= dragBottom ) {
                             $man.addClass("red");
                         } else {

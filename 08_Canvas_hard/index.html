@@ -15,18 +15,18 @@
     <script>
         $(function () {
 
-            var canvas=document.getElementById('canvas_int'),
-                ctx = canvas.getContext('2d'),
+            var canvas=document.getElementById("canvas_int"),
+                ctx = canvas.getContext("2d"),
                 x = canvas.width / 2,
                 y = canvas.height / 2,
                 radius = 215,
                 startAngle = 0,
-                endAngle = 4*Math.PI/3,
+                endAngle = 4 * Math.PI / 3,
                 timeStep = 20;
-                start = 4*Math.PI/3,
+                start = 4 * Math.PI / 3,
                 time = 0,
                 alltime = 7800,
-                step = (8/3*Math.PI)/alltime;
+                step = (8 / 3 * Math.PI) / alltime;
 
             $('#canvas_int').mouseover(function(){
 
@@ -40,9 +40,9 @@
 
                     startAngle = endAngle;
                     time += timeStep;
-                    endAngle = (step*time) + start;
+                    endAngle = (step * time) + start;
 
-                    if(endAngle > Math.PI*10/3) {
+                    if(endAngle > Math.PI * 10 / 3) {
                         radius = 245;
                     }
 
@@ -57,35 +57,35 @@
                     ctx.arc(x, y, radius, startAngle, endAngle);
                     ctx.lineWidth = 14;
 
-                    if (endAngle <= 3*Math.PI/2) {
+                    if (endAngle <= 3 * Math.PI / 2) {
                         ctx.strokeStyle = "#5d7fa9"
                     }
 
-                    if (endAngle >= 3*Math.PI/2){
+                    if (endAngle >= 3 * Math.PI / 2){
                         ctx.strokeStyle = " #9bcaed"
                     }
 
-                    if (endAngle >= 8*Math.PI/3){
+                    if (endAngle >= 8 * Math.PI / 3){
                         ctx.strokeStyle = "#459bc7"
                     }
 
-                    if (endAngle > 17*Math.PI/6 -0.01 && endAngle < 17*Math.PI/6 + 0.04){
+                    if (endAngle > 17 * Math.PI/ 6 - 0.01 && endAngle < 17 * Math.PI / 6 + 0.04){
                         ctx.strokeStyle = "#7e9eae"
                     }
 
-                    if (endAngle >= 3*Math.PI){
+                    if (endAngle >= 3 * Math.PI){
                         ctx.strokeStyle = "#3080a9"
                     }
 
-                    if (endAngle >= 19*Math.PI/6){
+                    if (endAngle >= 19*Math.PI / 6){
                         ctx.strokeStyle = "#ffffff"
                     }
 
-                    if (endAngle >= 7*Math.PI/2){
+                    if (endAngle >= 7*Math.PI / 2){
                         ctx.strokeStyle = "#0267b0"
                     }
 
-                    if (endAngle >= 23*Math.PI/6){
+                    if (endAngle >= 23 * Math.PI / 6){
                         ctx.strokeStyle = "#1a4791"
                     }
 
